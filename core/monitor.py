@@ -32,18 +32,23 @@ def get_system_stats():
 
 def get_network_speed():
     """Тест скорости интернета"""
-    st = speedtest.Speedtest()
-    st.download()  # Замеряем скорость скачивания
-    st.upload()  # Замеряем скорость загрузки
+    try:
+        st = speedtest.Speedtest(timeout=10)
+        st.get_servers()  # This might help in some cases
+        st.get_best_server()
+        st.download()
+        st.upload()
 
-    download_speed = st.results.download / (10 ** 6)  # в Мбит/с
-    upload_speed = st.results.upload / (10 ** 6)  # в Мбит/с
+        download_speed = st.results.download / (10 ** 6)  # в Мбит/с
+        upload_speed = st.results.upload / (10 ** 6)  # в Мбит/с
 
-    return {
-        "Download": f"{download_speed:.2f} Мбит/с",
-        "Upload": f"{upload_speed:.2f} Мбит/с",
-        "Ping": f"{st.results.ping:.2f} мс"
-    }
+        return {
+            "Download": f"{download_speed:.2f} Мбит/с",
+            "Upload": f"{upload_speed:.2f} Мбит/с",
+            "Ping": f"{st.results.ping:.2f} мс"
+        }
+    except Exception as e:
+        return {"error": str(e)}
 
 
 if __name__ == '__main__':
