@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>425</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -299,6 +299,103 @@
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="start_test_B">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>100</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Начать тест</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>10</y>
+      <width>85</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Download:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>30</y>
+      <width>85</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Upload:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_16">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>50</y>
+      <width>85</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ping:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Ping_L">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>50</y>
+      <width>300</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Upload_L">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>30</y>
+      <width>300</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Download_L">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>10</y>
+      <width>300</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>300</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -306,7 +403,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
