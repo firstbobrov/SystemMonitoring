@@ -2,7 +2,9 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtCore import QThread
 from ui.monitor_ui import Ui_MainWindow
-from worker import SystemMonitoring, SpeedTest  # импортируем SpeedTest
+from worker import SystemMonitoring, SpeedTest, StaticValue  # Добавляем импорт StaticValue
+from core.logs import logging_system_monitor, logging_network_speed
+from core.monitor import get_mac
 
 
 class MainWindow(QMainWindow):
@@ -11,10 +13,13 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
+        # Запускаем воркер для статических данных (IP/MAC)
+        self.init_static_data()
+
         # Подключаем кнопку к обработчику
         self.ui.start_test_B.clicked.connect(self.speed_test)
 
-        # Поток и объект для мониторинга
+        # Поток и объект для мониторинга системы
         self.thread = QThread()
         self.worker = SystemMonitoring()
         self.worker.moveToThread(self.thread)
@@ -22,17 +27,44 @@ class MainWindow(QMainWindow):
         self.worker.stats_ready.connect(self.update_system_monitoring)
         self.thread.start()
 
-        # Здесь будем хранить поток и воркер для спидтеста
+        # Переменные для спидтеста
         self.speed_thread = None
         self.speed_worker = None
 
 
+
+    def init_static_data(self):
+        """Инициализация статических данных (IP/MAC)"""
+        self.static_thread = QThread()
+        self.static_worker = StaticValue()
+        self.static_worker.moveToThread(self.static_thread)
+
+        # Подключаем сигналы
+        self.static_thread.started.connect(self.static_worker.run)
+        self.static_worker.stats_ready.connect(self.update_static_info)
+        self.static_worker.stats_ready.connect(self.static_thread.quit)
+
+        # Очистка после завершения
+        self.static_thread.finished.connect(self.static_worker.deleteLater)
+        self.static_thread.finished.connect(self.static_thread.deleteLater)
+
+        # Запускаем поток
+        self.static_thread.start()
+
+    def update_static_info(self, stats):
+        """Обновление статической информации (IP/MAC)"""
+        self.ui.PublicIP_L.setText(f"{stats.get('Public_IP', 'N/A')}")
+        self.ui.LocalIP_L.setText(f"{stats.get('Local_IP', 'N/A')}")
+        self.ui.MacAddr_L.setText(f"{stats.get('Mac', 'N/A')}")
+
     def update_system_monitoring(self, stats):
-        self.ui.cpu_L.setText(f"{stats['CPU']}")
-        self.ui.ram_L.setText(f"{stats['RAM']}")
-        self.ui.disk_L.setText(f"{stats['Disk']}")
-        self.ui.gpu_L.setText(f"{stats['GPU']}")
-        self.ui.network_L.setText(f"{stats['Network']}")
+        """Обновление динамической информации (CPU/RAM и т.д.)"""
+        logging_system_monitor(stats)
+        self.ui.cpu_L.setText(f"{stats.get('CPU', 'N/A')}")
+        self.ui.ram_L.setText(f"{stats.get('RAM', 'N/A')}")
+        self.ui.disk_L.setText(f"{stats.get('Disk', 'N/A')}")
+        self.ui.gpu_L.setText(f"{stats.get('GPU', 'N/A')}")
+        self.ui.network_L.setText(f"{stats.get('Network', 'N/A')}")
 
 
     def speed_test(self):
@@ -64,16 +96,24 @@ class MainWindow(QMainWindow):
 
     def update_speed_network(self, stats):
         # Обрабатываем результат спидтеста — выводим в UI или консоль
-        self.ui.Download_L.setText(f"{stats.get('Download')}")
-        self.ui.Upload_L.setText(f"{stats.get('Upload')}")
-        self.ui.Ping_L.setText(f"{stats.get('Ping')}")
+        logging_network_speed(stats)
+        self.ui.Download_L.setText(f"{stats.get('Download', 'Сервис сейчас недоступен')}")
+        self.ui.Upload_L.setText(f"{stats.get('Upload', 'Сервис сейчас недоступен')}")
+        self.ui.Ping_L.setText(f"{stats.get('Ping', 'Сервис сейчас недоступен')}")
+        self.ui.PublicIP_L.setText(f"{stats.get('Public_IP', self.ui.PublicIP_L.text())}")
+        self.ui.LocalIP_L.setText(f"{stats.get('Local_IP', self.ui.LocalIP_L.text())}")
+        self.ui.MacAddr_L.setText(f"{stats.get('Mac', self.ui.MacAddr_L.text())}")
         self.ui.start_test_B.setEnabled(True)
 
 
     def closeEvent(self, event):
+        """Обработчик закрытия окна"""
         self.worker.stop()
         self.thread.quit()
         self.thread.wait()
+        if hasattr(self, 'static_thread') and self.static_thread.isRunning():
+            self.static_thread.quit()
+            self.static_thread.wait()
         event.accept()
 
 

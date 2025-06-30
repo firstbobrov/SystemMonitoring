@@ -302,8 +302,8 @@
    <widget class="QPushButton" name="start_test_B">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>100</y>
+      <x>510</x>
+      <y>160</y>
       <width>201</width>
       <height>41</height>
      </rect>
@@ -354,7 +354,7 @@
    <widget class="QLabel" name="Ping_L">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>630</x>
       <y>50</y>
       <width>300</width>
       <height>16</height>
@@ -367,7 +367,7 @@
    <widget class="QLabel" name="Upload_L">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>630</x>
       <y>30</y>
       <width>300</width>
       <height>16</height>
@@ -380,7 +380,7 @@
    <widget class="QLabel" name="Download_L">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>630</x>
       <y>10</y>
       <width>300</width>
       <height>16</height>
@@ -396,6 +396,84 @@
      <string>-</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_18">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>80</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Публичный IP:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="PublicIP_L">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>80</y>
+      <width>300</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LocalIP_L">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>100</y>
+      <width>300</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_20">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>100</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Локальный IP:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_21">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>130</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Мак адрес:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MacAddr_L">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>130</y>
+      <width>300</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -403,7 +481,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -421,25 +499,13 @@
     </widget>
     <addaction name="menu_5"/>
    </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
-     <string>Система</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="menu_3">
-    <property name="title">
-     <string>Скорость интернета</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_4">
     <property name="title">
      <string>Настройки</string>
     </property>
    </widget>
    <addaction name="menu"/>
-   <addaction name="menu_2"/>
    <addaction name="menu_3"/>
-   <addaction name="menu_4"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionWord">
