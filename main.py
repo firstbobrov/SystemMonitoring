@@ -4,7 +4,6 @@ from PySide6.QtCore import QThread
 from ui.monitor_ui import Ui_MainWindow
 from worker import SystemMonitoring, SpeedTest, StaticValue  # Добавляем импорт StaticValue
 from core.logs import logging_system_monitor, logging_network_speed
-from core.monitor import get_mac
 
 
 class MainWindow(QMainWindow):

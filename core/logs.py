@@ -6,7 +6,7 @@ def logging_system_monitor(dictionary):
     current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     data = read_json_file('system_monitor.json')
     dictionary['date_time'] = current_datetime
-    data.append(dictionary)
+    data = [dictionary] + data
     write_file_from_dict(data, 'system_monitor.json')
     return data
 
@@ -14,8 +14,7 @@ def logging_system_monitor(dictionary):
 def logging_network_speed(dictionary):
     current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     data = read_json_file('network_speed.json')
-    dictionary['date_time'] = current_datetime
-    data.append(dictionary)
+    data = [dictionary] + data
     write_file_from_dict(data, 'network_speed.json')
     return data
 
