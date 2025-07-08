@@ -29,6 +29,29 @@ class MainWindow(QMainWindow):
         self.ui.actionEN_2.triggered.connect(self.set_english_language)
         self.ui.actionRU_2.triggered.connect(self.set_russian_language)
 
+        # Подключаем обработчики для экспорта данных
+        # self.ui.actionWord.triggered.connect(self.export_to_word)
+        # self.ui.actionExcel.triggered.connect(self.export_to_excel)
+        # self.ui.actiontxt.triggered.connect(self.export_to_txt)
+        # self.ui.actionpdf.triggered.connect(self.export_to_pdf)
+        # self.ui.actionhtml.triggered.connect(self.export_to_html)
+
+        # Собираем данные для экспорта
+        self.export_data = {
+            "CPU": [],
+            "RAM": [],
+            "Disk": [],
+            "GPU": [],
+            "Network": [],
+            "Download": [],
+            "Upload": [],
+            "Ping": [],
+            "Public_IP": [],
+            "Local_IP": [],
+            "MAC": [],
+            "Timestamp": []
+        }
+
         # Системный мониторинг
         self.thread = QThread()
         self.worker = SystemMonitoring()
@@ -111,10 +134,6 @@ class MainWindow(QMainWindow):
         self.ui.start_test_B.setText("Начать тест")
 
 
-
-
-
-
     def init_cpu_chart(self):
         """Инициализация графика загрузки CPU"""
         # Создаем график
@@ -157,7 +176,6 @@ class MainWindow(QMainWindow):
         layout.setContentsMargins(0, 0, 0, 0)
 
 
-    # ... остальные методы без изменений ...
     def init_static_data(self):
         """Инициализация статических данных (IP/MAC)"""
         self.static_thread = QThread()
@@ -176,11 +194,17 @@ class MainWindow(QMainWindow):
         # Запускаем поток
         self.static_thread.start()
 
+
     def update_static_info(self, stats):
         """Обновление статической информации (IP/MAC)"""
         self.ui.PublicIP_L.setText(f"{stats.get('Public_IP', 'N/A')}")
         self.ui.LocalIP_L.setText(f"{stats.get('Local_IP', 'N/A')}")
         self.ui.MacAddr_L.setText(f"{stats.get('Mac', 'N/A')}")
+        # для экспорта
+        self.export_data["Public_IP"] = stats.get('Public_IP', 'N/A')
+        self.export_data["Local_IP"] = stats.get('Local_IP', 'N/A')
+        self.export_data["MAC"] = stats.get('Mac', 'N/A')
+
 
     def update_system_monitoring(self, stats):
         """Обновление динамической информации и графика"""
@@ -192,6 +216,14 @@ class MainWindow(QMainWindow):
         self.ui.disk_L.setText(f"{stats.get('Disk', 'N/A')}")
         self.ui.gpu_L.setText(f"{stats.get('GPU', 'N/A')}")
         self.ui.network_L.setText(f"{stats.get('Network', 'N/A')}")
+        # для экспорта
+        self.export_data["CPU"] = stats.get('CPU', 'N/A')
+        self.export_data["RAM"] = stats.get('RAM', 'N/A')
+        self.export_data["Disk"] = stats.get('Disk', 'N/A')
+        self.export_data["GPU"] = stats.get('GPU', 'N/A')
+        self.export_data["Network"] = stats.get('Network', 'N/A')
+        self.export_data["Timestamp"] = stats.get('date_time', 'N/A')
+
 
         # Обновляем график CPU
         try:
@@ -203,14 +235,11 @@ class MainWindow(QMainWindow):
     def update_cpu_chart(self, cpu_usage):
         """Обновление графика загрузки CPU"""
         self.time_counter += 1
-
         # Добавляем новую точку
         self.series.append(self.time_counter, cpu_usage)
-
         # Если точек больше, чем max_points, удаляем самую старую
         if self.series.count() > self.max_points:
             self.series.remove(0)
-
         # Всегда показываем окно из max_points последних точек
         if self.time_counter > self.max_points:
             self.axis_x.setRange(self.time_counter - self.max_points + 1, self.time_counter)
@@ -252,6 +281,13 @@ class MainWindow(QMainWindow):
         self.ui.PublicIP_L.setText(f"{stats.get('Public_IP', self.ui.PublicIP_L.text())}")
         self.ui.LocalIP_L.setText(f"{stats.get('Local_IP', self.ui.LocalIP_L.text())}")
         self.ui.MacAddr_L.setText(f"{stats.get('Mac', self.ui.MacAddr_L.text())}")
+        # для экспорта
+        self.export_data["Download"] = stats.get('Download', 'N/A')
+        self.export_data["Upload"] = stats.get('Upload', 'N/A')
+        self.export_data["Ping"] = stats.get('Ping', 'N/A')
+        self.export_data["Timestamp"] = stats.get('date_time', 'N/A')
+        print(self.export_data)
+
 
     def closeEvent(self, event):
         """Обработчик закрытия окна"""

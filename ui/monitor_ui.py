@@ -67,6 +67,12 @@ class Ui_MainWindow(object):
 "    max-height: 30px;\n"
 "}\n"
 "\n"
+"QPushButton:disabled {\n"
+"    background: #424443; /* \u0411\u043e\u043b\u0435\u0435 \u0442\u0435\u043c\u043d\u044b\u0439 \u0438\u043b\u0438 \u043c\u0435\u043d\u0435\u0435 \u043d\u0430\u0441\u044b"
+                        "\u0449\u0435\u043d\u043d\u044b\u0439 \u043e\u0442\u0442\u0435\u043d\u043e\u043a \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0433\u043e \u0446\u0432\u0435\u0442\u0430 */\n"
+"    color: #6B6B6B; /* \u041c\u043e\u0436\u043d\u043e \u0442\u0430\u043a\u0436\u0435 \u0438\u0437\u043c\u0435\u043d\u0438\u0442\u044c \u0446\u0432\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u0430 \u0434\u043b\u044f \u043d\u0435\u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0445 \u043a\u043d\u043e\u043f\u043e\u043a */\n"
+"}\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -83,8 +89,7 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "\n"
-"/* \u0421\u0442\u0438\u043b\u0438 \u0434\u043b\u044f"
-                        " \u0432\u0438\u0434\u0436\u0435\u0442\u0430 \u0433\u0440\u0430\u0444\u0438\u043a\u0430 (QChartView) */\n"
+"/* \u0421\u0442\u0438\u043b\u0438 \u0434\u043b\u044f \u0432\u0438\u0434\u0436\u0435\u0442\u0430 \u0433\u0440\u0430\u0444\u0438\u043a\u0430 (QChartView) */\n"
 "QChartView {\n"
 "    background-color: #424443;\n"
 "    border-radius: 4px;\n"
@@ -92,7 +97,8 @@ class Ui_MainWindow(object):
 "    padding: 0px;\n"
 "}\n"
 "\n"
-"/* \u0421\u0442\u0438\u043b\u0438 \u0434\u043b\u044f \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u0432\u043d\u0443\u0442\u0440\u0438 \u0433\u0440\u0430\u0444\u0438\u043a\u0430 */\n"
+"/* \u0421\u0442\u0438\u043b\u0438 \u0434\u043b\u044f \u044d\u043b\u0435"
+                        "\u043c\u0435\u043d\u0442\u043e\u0432 \u0432\u043d\u0443\u0442\u0440\u0438 \u0433\u0440\u0430\u0444\u0438\u043a\u0430 */\n"
 "QChartView QChart {\n"
 "    background-color: transparent;\n"
 "    margin: 0px;\n"
@@ -117,10 +123,121 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QChartView QLineSeries {\n"
-"    color: #6BCDE3;  /* \u041e\u0441\u043d\u043e\u0432\u043d\u043e"
-                        "\u0439 \u0446\u0432\u0435\u0442 */\n"
+"    color: #6BCDE3;  /* \u041e\u0441\u043d\u043e\u0432\u043d\u043e\u0439 \u0446\u0432\u0435\u0442 */\n"
 "    alternate-color: #5ABDD3;  /* \u0414\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0439 \u0446\u0432\u0435\u0442 */\n"
 "    width: 2px;  /* \u0422\u043e\u043b\u0449\u0438\u043d\u0430 \u043b\u0438\u043d\u0438\u0438 */\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""
+                        "\n"
+"\n"
+"\n"
+"\n"
+"/* \u041e\u0441\u043d\u043e\u0432\u043d\u044b\u0435 \u0430\u043d\u0438\u043c\u0430\u0446\u0438\u0438 */\n"
+"QMenuBar, QMenuBar::item, QMenu, QMenu::item {\n"
+"    transition: all 150ms ease-out;\n"
+"}\n"
+"\n"
+"/* \u0421\u0442\u0438\u043b\u044c \u0434\u043b\u044f \u0432\u0435\u0440\u0445\u043d\u0435\u0439 \u043f\u0430\u043d\u0435\u043b\u0438 (QMenuBar) */\n"
+"QMenuBar {\n"
+"    background: #424443;\n"
+"    color: white;\n"
+"    font: 14px \"Montserrat\";\n"
+"    padding: 0;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"QMenuBar::item {\n"
+"    background: transparent;\n"
+"    padding: 6px 12px;\n"
+"    margin: 0;\n"
+"    border: none;\n"
+"    transition: background-color 200ms ease, color 200ms ease;\n"
+"}\n"
+"\n"
+"QMenuBar::item:hover {\n"
+"    background: #6BCDE3;\n"
+"    color: #424443;\n"
+"}\n"
+"\n"
+"QMenuBar::item:pressed {\n"
+"    background: #5ABDD3;\n"
+"    transition: background-color 100ms ease;\n"
+"}\n"
+"\n"
+"QMenuBar::item:selected {\n"
+"    background: #6BCDE3;\n"
+"    color: #424443;\n"
+"}"
+                        "\n"
+"\n"
+"/* \u0421\u0442\u0438\u043b\u044c \u0434\u043b\u044f \u0432\u044b\u043f\u0430\u0434\u0430\u044e\u0449\u0435\u0433\u043e \u043c\u0435\u043d\u044e \u0438 \u043f\u043e\u0434\u043c\u0435\u043d\u044e */\n"
+"QMenu {\n"
+"    background: #424443;\n"
+"    color: white;\n"
+"    padding: 0;\n"
+"    margin: 0;\n"
+"    animation: fadeIn 150ms ease;\n"
+"}\n"
+"\n"
+"QMenu::item {\n"
+"    background: transparent;\n"
+"    padding: 3px 16px 3px 8px;\n"
+"    margin: 0;\n"
+"    min-height: 22px;\n"
+"    transition: background-color 150ms ease, color 150ms ease;\n"
+"}\n"
+"\n"
+"QMenu::item:selected, \n"
+"QMenu::item:hover {\n"
+"    background: #6BCDE3;\n"
+"    color: #424443;\n"
+"}\n"
+"\n"
+"QMenu::item:pressed {\n"
+"    background: #5ABDD3;\n"
+"    transition: background-color 100ms ease;\n"
+"}\n"
+"\n"
+"/* \u0410\u043d\u0438\u043c\u0430\u0446\u0438\u044f \u043f\u043e\u044f\u0432\u043b\u0435\u043d\u0438\u044f \u043c\u0435\u043d\u044e */\n"
+"@keyframes fadeIn {\n"
+"    from { opacity: 0; transform: translateY(-5px); }\n"
+"  "
+                        "  to { opacity: 1; transform: translateY(0); }\n"
+"}\n"
+"\n"
+"/* \u0420\u0430\u0437\u0434\u0435\u043b\u0438\u0442\u0435\u043b\u044c \u0432 \u043c\u0435\u043d\u044e */\n"
+"QMenu::separator {\n"
+"    height: 1px;\n"
+"    background: #545655;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"/* \u0418\u043d\u0434\u0438\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u0434\u043c\u0435\u043d\u044e */\n"
+"QMenu::indicator {\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
+"    margin-right: 0;\n"
+"    transition: transform 150ms ease;\n"
+"}\n"
+"\n"
+"QMenu::indicator:open {\n"
+"    transform: rotate(90deg);\n"
+"}\n"
+"\n"
+"/* \u0418\u043a\u043e\u043d\u043a\u0438 \u0432 \u043c\u0435\u043d\u044e */\n"
+"QMenu::icon {\n"
+"    padding-left: 0;\n"
+"    margin-right: 4px;\n"
+"    transition: opacity 150ms ease;\n"
+"}\n"
+"\n"
+"QMenu::icon:hover {\n"
+"    opacity: 0.8;\n"
 "}")
         self.actionWord = QAction(MainWindow)
         self.actionWord.setObjectName(u"actionWord")
@@ -138,6 +255,8 @@ class Ui_MainWindow(object):
         self.actionRU_2.setObjectName(u"actionRU_2")
         self.actionEN_2 = QAction(MainWindow)
         self.actionEN_2.setObjectName(u"actionEN_2")
+        self.actionExcel = QAction(MainWindow)
+        self.actionExcel.setObjectName(u"actionExcel")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_5 = QVBoxLayout(self.centralwidget)
@@ -527,7 +646,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addLayout(self.verticalLayout_2)
 
-        self.horizontalSpacer_21 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_21 = QSpacerItem(0, 20, QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_15.addItem(self.horizontalSpacer_21)
 
@@ -564,7 +683,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 700, 22))
+        self.menubar.setGeometry(QRect(0, 0, 700, 31))
         self.file_MB = QMenu(self.menubar)
         self.file_MB.setObjectName(u"file_MB")
         self.export_MB = QMenu(self.file_MB)
@@ -585,6 +704,7 @@ class Ui_MainWindow(object):
         self.export_MB.addAction(self.actiontxt)
         self.export_MB.addAction(self.actionpdf)
         self.export_MB.addAction(self.actionhtml)
+        self.export_MB.addAction(self.actionExcel)
         self.params_MB.addAction(self.lang_MB.menuAction())
         self.lang_MB.addAction(self.actionRU_2)
         self.lang_MB.addAction(self.actionEN_2)
@@ -597,13 +717,14 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.actionWord.setText(QCoreApplication.translate("MainWindow", u"Word", None))
-        self.actiontxt.setText(QCoreApplication.translate("MainWindow", u"txt", None))
-        self.actionpdf.setText(QCoreApplication.translate("MainWindow", u"pdf", None))
-        self.actionhtml.setText(QCoreApplication.translate("MainWindow", u"html", None))
+        self.actiontxt.setText(QCoreApplication.translate("MainWindow", u"Excel", None))
+        self.actionpdf.setText(QCoreApplication.translate("MainWindow", u"txt", None))
+        self.actionhtml.setText(QCoreApplication.translate("MainWindow", u"pdf", None))
         self.actionRU.setText(QCoreApplication.translate("MainWindow", u"RU", None))
         self.actionEN.setText(QCoreApplication.translate("MainWindow", u"EN", None))
-        self.actionRU_2.setText(QCoreApplication.translate("MainWindow", u"RU", None))
-        self.actionEN_2.setText(QCoreApplication.translate("MainWindow", u"EN", None))
+        self.actionRU_2.setText(QCoreApplication.translate("MainWindow", u"Russian", None))
+        self.actionEN_2.setText(QCoreApplication.translate("MainWindow", u"English", None))
+        self.actionExcel.setText(QCoreApplication.translate("MainWindow", u"html", None))
         self.publicIP_L.setText(QCoreApplication.translate("MainWindow", u"Public IP:", None))
         self.PublicIP_L.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.localIP_L.setText(QCoreApplication.translate("MainWindow", u"Local IP:", None))

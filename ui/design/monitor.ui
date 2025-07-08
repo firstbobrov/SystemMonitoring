@@ -61,6 +61,11 @@ QPushButton {
     max-height: 30px;
 }
 
+QPushButton:disabled {
+    background: #424443; /* Более темный или менее насыщенный оттенок основного цвета */
+    color: #6B6B6B; /* Можно также изменить цвет текста для неактивных кнопок */
+}
+
 
 
 
@@ -113,6 +118,115 @@ QChartView QLineSeries {
     color: #6BCDE3;  /* Основной цвет */
     alternate-color: #5ABDD3;  /* Дополнительный цвет */
     width: 2px;  /* Толщина линии */
+}
+
+
+
+
+
+
+
+
+
+/* Основные анимации */
+QMenuBar, QMenuBar::item, QMenu, QMenu::item {
+    transition: all 150ms ease-out;
+}
+
+/* Стиль для верхней панели (QMenuBar) */
+QMenuBar {
+    background: #424443;
+    color: white;
+    font: 14px &quot;Montserrat&quot;;
+    padding: 0;
+    margin: 0;
+}
+
+QMenuBar::item {
+    background: transparent;
+    padding: 6px 12px;
+    margin: 0;
+    border: none;
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+QMenuBar::item:hover {
+    background: #6BCDE3;
+    color: #424443;
+}
+
+QMenuBar::item:pressed {
+    background: #5ABDD3;
+    transition: background-color 100ms ease;
+}
+
+QMenuBar::item:selected {
+    background: #6BCDE3;
+    color: #424443;
+}
+
+/* Стиль для выпадающего меню и подменю */
+QMenu {
+    background: #424443;
+    color: white;
+    padding: 0;
+    margin: 0;
+    animation: fadeIn 150ms ease;
+}
+
+QMenu::item {
+    background: transparent;
+    padding: 3px 16px 3px 8px;
+    margin: 0;
+    min-height: 22px;
+    transition: background-color 150ms ease, color 150ms ease;
+}
+
+QMenu::item:selected, 
+QMenu::item:hover {
+    background: #6BCDE3;
+    color: #424443;
+}
+
+QMenu::item:pressed {
+    background: #5ABDD3;
+    transition: background-color 100ms ease;
+}
+
+/* Анимация появления меню */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Разделитель в меню */
+QMenu::separator {
+    height: 1px;
+    background: #545655;
+    margin: 0;
+}
+
+/* Индикатор подменю */
+QMenu::indicator {
+    width: 12px;
+    height: 12px;
+    margin-right: 0;
+    transition: transform 150ms ease;
+}
+
+QMenu::indicator:open {
+    transform: rotate(90deg);
+}
+
+/* Иконки в меню */
+QMenu::icon {
+    padding-left: 0;
+    margin-right: 4px;
+    transition: opacity 150ms ease;
+}
+
+QMenu::icon:hover {
+    opacity: 0.8;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -1010,9 +1124,12 @@ QChartView QLineSeries {
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+        </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>40</width>
+          <width>0</width>
           <height>20</height>
          </size>
         </property>
@@ -1100,7 +1217,7 @@ QChartView QLineSeries {
      <x>0</x>
      <y>0</y>
      <width>700</width>
-     <height>22</height>
+     <height>31</height>
     </rect>
    </property>
    <widget class="QMenu" name="file_MB">
@@ -1115,6 +1232,7 @@ QChartView QLineSeries {
      <addaction name="actiontxt"/>
      <addaction name="actionpdf"/>
      <addaction name="actionhtml"/>
+     <addaction name="actionExcel"/>
     </widget>
     <addaction name="export_MB"/>
    </widget>
@@ -1142,17 +1260,17 @@ QChartView QLineSeries {
   </action>
   <action name="actiontxt">
    <property name="text">
-    <string>txt</string>
+    <string>Excel</string>
    </property>
   </action>
   <action name="actionpdf">
    <property name="text">
-    <string>pdf</string>
+    <string>txt</string>
    </property>
   </action>
   <action name="actionhtml">
    <property name="text">
-    <string>html</string>
+    <string>pdf</string>
    </property>
   </action>
   <action name="actionRU">
@@ -1173,6 +1291,11 @@ QChartView QLineSeries {
   <action name="actionEN_2">
    <property name="text">
     <string>English</string>
+   </property>
+  </action>
+  <action name="actionExcel">
+   <property name="text">
+    <string>html</string>
    </property>
   </action>
  </widget>
