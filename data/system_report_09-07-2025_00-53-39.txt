@@ -1,0 +1,12 @@
+CPU: 4.7%
+RAM: 6.53 GB / 7.80 GB
+Disk: 347.83 GB / 461.23 GB
+GPU: Нет данных
+Network: Sent: 1138.14 MB | Recv: 9781.86 MB
+Download: 112.68 Мбит/с
+Upload: 178.23 Мбит/с
+Ping: 21.21 мс
+Public_IP: 5.44.172.92
+Local_IP: 192.168.0.103
+MAC: 70:32:17:cb:37:f2
+Timestamp: 2025-07-09 00:53:38

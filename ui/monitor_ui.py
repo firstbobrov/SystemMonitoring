@@ -26,6 +26,7 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(700, 675)
         MainWindow.setMinimumSize(QSize(700, 675))
+        MainWindow.setMaximumSize(QSize(700, 717))
         MainWindow.setStyleSheet(u"QMainWindow {\n"
 "    /*background: #545655;*/\n"
 "    color: white;\n"
@@ -239,12 +240,12 @@ class Ui_MainWindow(object):
 "QMenu::icon:hover {\n"
 "    opacity: 0.8;\n"
 "}")
-        self.actionWord = QAction(MainWindow)
-        self.actionWord.setObjectName(u"actionWord")
+        self.actiondocx = QAction(MainWindow)
+        self.actiondocx.setObjectName(u"actiondocx")
+        self.actionxlsx = QAction(MainWindow)
+        self.actionxlsx.setObjectName(u"actionxlsx")
         self.actiontxt = QAction(MainWindow)
         self.actiontxt.setObjectName(u"actiontxt")
-        self.actionpdf = QAction(MainWindow)
-        self.actionpdf.setObjectName(u"actionpdf")
         self.actionhtml = QAction(MainWindow)
         self.actionhtml.setObjectName(u"actionhtml")
         self.actionRU = QAction(MainWindow)
@@ -255,13 +256,15 @@ class Ui_MainWindow(object):
         self.actionRU_2.setObjectName(u"actionRU_2")
         self.actionEN_2 = QAction(MainWindow)
         self.actionEN_2.setObjectName(u"actionEN_2")
-        self.actionExcel = QAction(MainWindow)
-        self.actionExcel.setObjectName(u"actionExcel")
+        self.actionhtml_2 = QAction(MainWindow)
+        self.actionhtml_2.setObjectName(u"actionhtml_2")
+        self.actionall_formats = QAction(MainWindow)
+        self.actionall_formats.setObjectName(u"actionall_formats")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_5 = QVBoxLayout(self.centralwidget)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.verticalSpacer_11 = QSpacerItem(20, 13, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_11 = QSpacerItem(20, 3, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_5.addItem(self.verticalSpacer_11)
 
@@ -290,7 +293,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_14.addLayout(self.horizontalLayout_9)
 
-        self.horizontalSpacer_16 = QSpacerItem(40, 20, QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_16 = QSpacerItem(40, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_14.addItem(self.horizontalSpacer_16)
 
@@ -313,7 +316,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_14.addLayout(self.horizontalLayout_10)
 
-        self.horizontalSpacer_17 = QSpacerItem(40, 20, QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_17 = QSpacerItem(40, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_14.addItem(self.horizontalSpacer_17)
 
@@ -343,7 +346,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addLayout(self.horizontalLayout_14)
 
-        self.verticalSpacer_10 = QSpacerItem(20, 30, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_10 = QSpacerItem(20, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_5.addItem(self.verticalSpacer_10)
 
@@ -373,7 +376,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout_12)
 
-        self.verticalSpacer_5 = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_5 = QSpacerItem(20, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout.addItem(self.verticalSpacer_5)
 
@@ -402,7 +405,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_31)
 
-        self.verticalSpacer_15 = QSpacerItem(20, 13, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_15 = QSpacerItem(20, 13, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_4.addItem(self.verticalSpacer_15)
 
@@ -429,7 +432,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_32)
 
-        self.verticalSpacer_16 = QSpacerItem(20, 13, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_16 = QSpacerItem(20, 13, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_4.addItem(self.verticalSpacer_16)
 
@@ -456,7 +459,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_33)
 
-        self.verticalSpacer_17 = QSpacerItem(20, 13, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_17 = QSpacerItem(20, 13, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_4.addItem(self.verticalSpacer_17)
 
@@ -483,7 +486,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_34)
 
-        self.verticalSpacer_18 = QSpacerItem(20, 13, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_18 = QSpacerItem(20, 13, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_4.addItem(self.verticalSpacer_18)
 
@@ -513,7 +516,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addLayout(self.verticalLayout_4)
 
-        self.verticalSpacer_14 = QSpacerItem(20, 5, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_14 = QSpacerItem(20, 5, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout.addItem(self.verticalSpacer_14)
 
@@ -544,7 +547,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_13)
 
-        self.verticalSpacer_6 = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_6 = QSpacerItem(20, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_2.addItem(self.verticalSpacer_6)
 
@@ -573,7 +576,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3.addLayout(self.horizontalLayout_6)
 
-        self.verticalSpacer_7 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_7 = QSpacerItem(20, 10, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_3.addItem(self.verticalSpacer_7)
 
@@ -600,7 +603,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3.addLayout(self.horizontalLayout_7)
 
-        self.verticalSpacer_8 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_8 = QSpacerItem(20, 10, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_3.addItem(self.verticalSpacer_8)
 
@@ -630,7 +633,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addLayout(self.verticalLayout_3)
 
-        self.verticalSpacer_9 = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_9 = QSpacerItem(20, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_2.addItem(self.verticalSpacer_9)
 
@@ -639,21 +642,21 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.start_test_B)
 
-        self.verticalSpacer_13 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_13 = QSpacerItem(20, 40, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_2.addItem(self.verticalSpacer_13)
 
 
         self.horizontalLayout_15.addLayout(self.verticalLayout_2)
 
-        self.horizontalSpacer_21 = QSpacerItem(0, 20, QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_21 = QSpacerItem(0, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_15.addItem(self.horizontalSpacer_21)
 
 
         self.verticalLayout_5.addLayout(self.horizontalLayout_15)
 
-        self.verticalSpacer_19 = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        self.verticalSpacer_19 = QSpacerItem(20, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_5.addItem(self.verticalSpacer_19)
 
@@ -676,14 +679,14 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addLayout(self.horizontalLayout)
 
-        self.verticalSpacer_12 = QSpacerItem(20, 17, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.verticalSpacer_12 = QSpacerItem(20, 17, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_5.addItem(self.verticalSpacer_12)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 700, 31))
+        self.menubar.setGeometry(QRect(0, 0, 700, 30))
         self.file_MB = QMenu(self.menubar)
         self.file_MB.setObjectName(u"file_MB")
         self.export_MB = QMenu(self.file_MB)
@@ -700,11 +703,11 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.file_MB.menuAction())
         self.menubar.addAction(self.params_MB.menuAction())
         self.file_MB.addAction(self.export_MB.menuAction())
-        self.export_MB.addAction(self.actionWord)
+        self.export_MB.addAction(self.actiondocx)
+        self.export_MB.addAction(self.actionxlsx)
         self.export_MB.addAction(self.actiontxt)
-        self.export_MB.addAction(self.actionpdf)
-        self.export_MB.addAction(self.actionhtml)
-        self.export_MB.addAction(self.actionExcel)
+        self.export_MB.addAction(self.actionhtml_2)
+        self.export_MB.addAction(self.actionall_formats)
         self.params_MB.addAction(self.lang_MB.menuAction())
         self.lang_MB.addAction(self.actionRU_2)
         self.lang_MB.addAction(self.actionEN_2)
@@ -716,15 +719,16 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.actionWord.setText(QCoreApplication.translate("MainWindow", u"Word", None))
-        self.actiontxt.setText(QCoreApplication.translate("MainWindow", u"Excel", None))
-        self.actionpdf.setText(QCoreApplication.translate("MainWindow", u"txt", None))
+        self.actiondocx.setText(QCoreApplication.translate("MainWindow", u"docx", None))
+        self.actionxlsx.setText(QCoreApplication.translate("MainWindow", u"xlsx", None))
+        self.actiontxt.setText(QCoreApplication.translate("MainWindow", u"txt", None))
         self.actionhtml.setText(QCoreApplication.translate("MainWindow", u"pdf", None))
         self.actionRU.setText(QCoreApplication.translate("MainWindow", u"RU", None))
         self.actionEN.setText(QCoreApplication.translate("MainWindow", u"EN", None))
         self.actionRU_2.setText(QCoreApplication.translate("MainWindow", u"Russian", None))
         self.actionEN_2.setText(QCoreApplication.translate("MainWindow", u"English", None))
-        self.actionExcel.setText(QCoreApplication.translate("MainWindow", u"html", None))
+        self.actionhtml_2.setText(QCoreApplication.translate("MainWindow", u"html", None))
+        self.actionall_formats.setText(QCoreApplication.translate("MainWindow", u"all formats", None))
         self.publicIP_L.setText(QCoreApplication.translate("MainWindow", u"Public IP:", None))
         self.PublicIP_L.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.localIP_L.setText(QCoreApplication.translate("MainWindow", u"Local IP:", None))

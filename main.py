@@ -1,4 +1,6 @@
 import sys
+from datetime import datetime
+
 from PySide6.QtWidgets import QApplication, QMainWindow, QVBoxLayout
 from PySide6.QtCore import QThread, Qt
 from PySide6.QtCharts import QChart, QChartView, QLineSeries, QValueAxis
@@ -6,6 +8,8 @@ from PySide6.QtGui import QPainter
 from ui.monitor_ui import Ui_MainWindow
 from worker import SystemMonitoring, SpeedTest, StaticValue
 from core.logs import logging_system_monitor, logging_network_speed
+from core.report_generator import (save_to_txt, save_to_docx, save_to_html, save_to_xlsx,
+                                   save_data_to_all_formats)
 
 
 class MainWindow(QMainWindow):
@@ -30,26 +34,27 @@ class MainWindow(QMainWindow):
         self.ui.actionRU_2.triggered.connect(self.set_russian_language)
 
         # Подключаем обработчики для экспорта данных
-        # self.ui.actionWord.triggered.connect(self.export_to_word)
-        # self.ui.actionExcel.triggered.connect(self.export_to_excel)
-        # self.ui.actiontxt.triggered.connect(self.export_to_txt)
-        # self.ui.actionpdf.triggered.connect(self.export_to_pdf)
-        # self.ui.actionhtml.triggered.connect(self.export_to_html)
+        self.ui.actiondocx.triggered.connect(self.export_to_word)
+        self.ui.actionxlsx.triggered.connect(self.export_to_excel)
+        self.ui.actiontxt.triggered.connect(self.export_to_txt)
+        self.ui.actionhtml_2.triggered.connect(self.export_to_html)
+        self.ui.actionall_formats.triggered.connect(self.export_to_all_formats)
+
 
         # Собираем данные для экспорта
         self.export_data = {
-            "CPU": [],
-            "RAM": [],
-            "Disk": [],
-            "GPU": [],
-            "Network": [],
-            "Download": [],
-            "Upload": [],
-            "Ping": [],
-            "Public_IP": [],
-            "Local_IP": [],
-            "MAC": [],
-            "Timestamp": []
+            "CPU": None,
+            "RAM": None,
+            "Disk": None,
+            "GPU": None,
+            "Network": None,
+            "Download": None,
+            "Upload": None,
+            "Ping": None,
+            "Public_IP": None,
+            "Local_IP": None,
+            "MAC": None,
+            "Timestamp": None
         }
 
         # Системный мониторинг
@@ -65,6 +70,41 @@ class MainWindow(QMainWindow):
         self.speed_worker = None
 
         self.label_design()
+
+
+    def export_to_word(self):
+        file_name = f"system_report_{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}"
+        save_to_docx(self.export_data, file_name)
+        # Показываем сообщение в статусбаре на 10 секунд
+        self.statusBar().showMessage(f"Файл сохранён: {file_name}.docx", 10000)
+
+
+    def export_to_excel(self):
+        file_name = f"system_report_{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}"
+        save_to_xlsx(self.export_data, file_name)
+        # Показываем сообщение в статусбаре на 10 секунд
+        self.statusBar().showMessage(f"Файл сохранён: {file_name}.xlsx", 10000)
+
+
+    def export_to_txt(self):
+        file_name = f"system_report_{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}"
+        save_to_txt(self.export_data, file_name)
+        # Показываем сообщение в статусбаре на 10 секунд
+        self.statusBar().showMessage(f"Файл сохранён: {file_name}.txt", 10000)
+
+
+    def export_to_html(self):
+        file_name = f"system_report_{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}"
+        save_to_html(self.export_data, file_name)
+        # Показываем сообщение в статусбаре на 10 секунд
+        self.statusBar().showMessage(f"Файл сохранён: {file_name}.html", 10000)
+
+
+    def export_to_all_formats(self):
+        file_name = f"system_report_{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}"
+        save_data_to_all_formats(self.export_data, file_name)
+        # Показываем сообщение в статусбаре на 10 секунд
+        self.statusBar().showMessage(f"Файл сохранён: {file_name} (.html; .txt; .xlsx; .docx)", 10000)
 
 
     def label_design(self):
@@ -286,7 +326,6 @@ class MainWindow(QMainWindow):
         self.export_data["Upload"] = stats.get('Upload', 'N/A')
         self.export_data["Ping"] = stats.get('Ping', 'N/A')
         self.export_data["Timestamp"] = stats.get('date_time', 'N/A')
-        print(self.export_data)
 
 
     def closeEvent(self, event):
