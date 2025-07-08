@@ -130,6 +130,14 @@ class Ui_MainWindow(object):
         self.actionpdf.setObjectName(u"actionpdf")
         self.actionhtml = QAction(MainWindow)
         self.actionhtml.setObjectName(u"actionhtml")
+        self.actionRU = QAction(MainWindow)
+        self.actionRU.setObjectName(u"actionRU")
+        self.actionEN = QAction(MainWindow)
+        self.actionEN.setObjectName(u"actionEN")
+        self.actionRU_2 = QAction(MainWindow)
+        self.actionRU_2.setObjectName(u"actionRU_2")
+        self.actionEN_2 = QAction(MainWindow)
+        self.actionEN_2.setObjectName(u"actionEN_2")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_5 = QVBoxLayout(self.centralwidget)
@@ -146,10 +154,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_9.addItem(self.horizontalSpacer_20)
 
-        self.label_18 = QLabel(self.centralwidget)
-        self.label_18.setObjectName(u"label_18")
+        self.publicIP_L = QLabel(self.centralwidget)
+        self.publicIP_L.setObjectName(u"publicIP_L")
 
-        self.horizontalLayout_9.addWidget(self.label_18)
+        self.horizontalLayout_9.addWidget(self.publicIP_L)
 
         self.horizontalSpacer_9 = QSpacerItem(5, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
@@ -169,10 +177,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_10 = QHBoxLayout()
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.label_20 = QLabel(self.centralwidget)
-        self.label_20.setObjectName(u"label_20")
+        self.localIP_L = QLabel(self.centralwidget)
+        self.localIP_L.setObjectName(u"localIP_L")
 
-        self.horizontalLayout_10.addWidget(self.label_20)
+        self.horizontalLayout_10.addWidget(self.localIP_L)
 
         self.horizontalSpacer_10 = QSpacerItem(5, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
@@ -192,10 +200,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_11 = QHBoxLayout()
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.label_21 = QLabel(self.centralwidget)
-        self.label_21.setObjectName(u"label_21")
+        self.mac_L = QLabel(self.centralwidget)
+        self.mac_L.setObjectName(u"mac_L")
 
-        self.horizontalLayout_11.addWidget(self.label_21)
+        self.horizontalLayout_11.addWidget(self.mac_L)
 
         self.horizontalSpacer_11 = QSpacerItem(5, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
@@ -234,10 +242,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_12.addItem(self.horizontalSpacer_12)
 
-        self.labelSystemMonitor = QLabel(self.centralwidget)
-        self.labelSystemMonitor.setObjectName(u"labelSystemMonitor")
+        self.systemmonitor_L = QLabel(self.centralwidget)
+        self.systemmonitor_L.setObjectName(u"systemmonitor_L")
 
-        self.horizontalLayout_12.addWidget(self.labelSystemMonitor)
+        self.horizontalLayout_12.addWidget(self.systemmonitor_L)
 
         self.horizontalSpacer_13 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
@@ -254,10 +262,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.horizontalLayout_31 = QHBoxLayout()
         self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
-        self.label_37 = QLabel(self.centralwidget)
-        self.label_37.setObjectName(u"label_37")
+        self.cpu_L_2 = QLabel(self.centralwidget)
+        self.cpu_L_2.setObjectName(u"cpu_L_2")
 
-        self.horizontalLayout_31.addWidget(self.label_37)
+        self.horizontalLayout_31.addWidget(self.cpu_L_2)
 
         self.horizontalSpacer_48 = QSpacerItem(40, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
@@ -281,10 +289,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_32 = QHBoxLayout()
         self.horizontalLayout_32.setObjectName(u"horizontalLayout_32")
-        self.label_38 = QLabel(self.centralwidget)
-        self.label_38.setObjectName(u"label_38")
+        self.ram_L_2 = QLabel(self.centralwidget)
+        self.ram_L_2.setObjectName(u"ram_L_2")
 
-        self.horizontalLayout_32.addWidget(self.label_38)
+        self.horizontalLayout_32.addWidget(self.ram_L_2)
 
         self.horizontalSpacer_50 = QSpacerItem(37, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
@@ -308,10 +316,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_33 = QHBoxLayout()
         self.horizontalLayout_33.setObjectName(u"horizontalLayout_33")
-        self.label_39 = QLabel(self.centralwidget)
-        self.label_39.setObjectName(u"label_39")
+        self.disk_L_2 = QLabel(self.centralwidget)
+        self.disk_L_2.setObjectName(u"disk_L_2")
 
-        self.horizontalLayout_33.addWidget(self.label_39)
+        self.horizontalLayout_33.addWidget(self.disk_L_2)
 
         self.horizontalSpacer_52 = QSpacerItem(39, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
@@ -335,10 +343,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_34 = QHBoxLayout()
         self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
-        self.label_40 = QLabel(self.centralwidget)
-        self.label_40.setObjectName(u"label_40")
+        self.gpu_L_2 = QLabel(self.centralwidget)
+        self.gpu_L_2.setObjectName(u"gpu_L_2")
 
-        self.horizontalLayout_34.addWidget(self.label_40)
+        self.horizontalLayout_34.addWidget(self.gpu_L_2)
 
         self.horizontalSpacer_54 = QSpacerItem(39, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
@@ -362,10 +370,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_35 = QHBoxLayout()
         self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
-        self.label_41 = QLabel(self.centralwidget)
-        self.label_41.setObjectName(u"label_41")
+        self.network_L_2 = QLabel(self.centralwidget)
+        self.network_L_2.setObjectName(u"network_L_2")
 
-        self.horizontalLayout_35.addWidget(self.label_41)
+        self.horizontalLayout_35.addWidget(self.network_L_2)
 
         self.horizontalSpacer_56 = QSpacerItem(8, 0, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
@@ -405,10 +413,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_13.addItem(self.horizontalSpacer_14)
 
-        self.labelNetworkSpeed = QLabel(self.centralwidget)
-        self.labelNetworkSpeed.setObjectName(u"labelNetworkSpeed")
+        self.networkspeed_L = QLabel(self.centralwidget)
+        self.networkspeed_L.setObjectName(u"networkspeed_L")
 
-        self.horizontalLayout_13.addWidget(self.labelNetworkSpeed)
+        self.horizontalLayout_13.addWidget(self.networkspeed_L)
 
         self.horizontalSpacer_15 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
@@ -425,10 +433,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.label_12 = QLabel(self.centralwidget)
-        self.label_12.setObjectName(u"label_12")
+        self.download_L = QLabel(self.centralwidget)
+        self.download_L.setObjectName(u"download_L")
 
-        self.horizontalLayout_6.addWidget(self.label_12)
+        self.horizontalLayout_6.addWidget(self.download_L)
 
         self.horizontalSpacer_6 = QSpacerItem(11, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
@@ -452,10 +460,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7 = QHBoxLayout()
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.label_14 = QLabel(self.centralwidget)
-        self.label_14.setObjectName(u"label_14")
+        self.upload_L = QLabel(self.centralwidget)
+        self.upload_L.setObjectName(u"upload_L")
 
-        self.horizontalLayout_7.addWidget(self.label_14)
+        self.horizontalLayout_7.addWidget(self.upload_L)
 
         self.horizontalSpacer_7 = QSpacerItem(34, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
@@ -479,10 +487,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_8 = QHBoxLayout()
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.label_16 = QLabel(self.centralwidget)
-        self.label_16.setObjectName(u"label_16")
+        self.ping_L = QLabel(self.centralwidget)
+        self.ping_L.setObjectName(u"ping_L")
 
-        self.horizontalLayout_8.addWidget(self.label_16)
+        self.horizontalLayout_8.addWidget(self.ping_L)
 
         self.horizontalSpacer_8 = QSpacerItem(53, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
@@ -557,24 +565,29 @@ class Ui_MainWindow(object):
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
         self.menubar.setGeometry(QRect(0, 0, 700, 22))
-        self.menu = QMenu(self.menubar)
-        self.menu.setObjectName(u"menu")
-        self.menu_5 = QMenu(self.menu)
-        self.menu_5.setObjectName(u"menu_5")
-        self.menu_3 = QMenu(self.menubar)
-        self.menu_3.setObjectName(u"menu_3")
+        self.file_MB = QMenu(self.menubar)
+        self.file_MB.setObjectName(u"file_MB")
+        self.export_MB = QMenu(self.file_MB)
+        self.export_MB.setObjectName(u"export_MB")
+        self.params_MB = QMenu(self.menubar)
+        self.params_MB.setObjectName(u"params_MB")
+        self.lang_MB = QMenu(self.params_MB)
+        self.lang_MB.setObjectName(u"lang_MB")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
-        self.menubar.addAction(self.menu.menuAction())
-        self.menubar.addAction(self.menu_3.menuAction())
-        self.menu.addAction(self.menu_5.menuAction())
-        self.menu_5.addAction(self.actionWord)
-        self.menu_5.addAction(self.actiontxt)
-        self.menu_5.addAction(self.actionpdf)
-        self.menu_5.addAction(self.actionhtml)
+        self.menubar.addAction(self.file_MB.menuAction())
+        self.menubar.addAction(self.params_MB.menuAction())
+        self.file_MB.addAction(self.export_MB.menuAction())
+        self.export_MB.addAction(self.actionWord)
+        self.export_MB.addAction(self.actiontxt)
+        self.export_MB.addAction(self.actionpdf)
+        self.export_MB.addAction(self.actionhtml)
+        self.params_MB.addAction(self.lang_MB.menuAction())
+        self.lang_MB.addAction(self.actionRU_2)
+        self.lang_MB.addAction(self.actionEN_2)
 
         self.retranslateUi(MainWindow)
 
@@ -587,33 +600,38 @@ class Ui_MainWindow(object):
         self.actiontxt.setText(QCoreApplication.translate("MainWindow", u"txt", None))
         self.actionpdf.setText(QCoreApplication.translate("MainWindow", u"pdf", None))
         self.actionhtml.setText(QCoreApplication.translate("MainWindow", u"html", None))
-        self.label_18.setText(QCoreApplication.translate("MainWindow", u"Public IP:", None))
+        self.actionRU.setText(QCoreApplication.translate("MainWindow", u"RU", None))
+        self.actionEN.setText(QCoreApplication.translate("MainWindow", u"EN", None))
+        self.actionRU_2.setText(QCoreApplication.translate("MainWindow", u"RU", None))
+        self.actionEN_2.setText(QCoreApplication.translate("MainWindow", u"EN", None))
+        self.publicIP_L.setText(QCoreApplication.translate("MainWindow", u"Public IP:", None))
         self.PublicIP_L.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.label_20.setText(QCoreApplication.translate("MainWindow", u"Local IP:", None))
+        self.localIP_L.setText(QCoreApplication.translate("MainWindow", u"Local IP:", None))
         self.LocalIP_L.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.label_21.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0430\u043a \u0430\u0434\u0440\u0435\u0441:", None))
+        self.mac_L.setText(QCoreApplication.translate("MainWindow", u"MAC address:", None))
         self.MacAddr_L.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.labelSystemMonitor.setText(QCoreApplication.translate("MainWindow", u"System monitor", None))
-        self.label_37.setText(QCoreApplication.translate("MainWindow", u"CPU:", None))
+        self.systemmonitor_L.setText(QCoreApplication.translate("MainWindow", u"System monitor", None))
+        self.cpu_L_2.setText(QCoreApplication.translate("MainWindow", u"CPU:", None))
         self.cpu_L.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.label_38.setText(QCoreApplication.translate("MainWindow", u"RAM:", None))
+        self.ram_L_2.setText(QCoreApplication.translate("MainWindow", u"RAM:", None))
         self.ram_L.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.label_39.setText(QCoreApplication.translate("MainWindow", u"Disk:", None))
+        self.disk_L_2.setText(QCoreApplication.translate("MainWindow", u"Disk:", None))
         self.disk_L.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.label_40.setText(QCoreApplication.translate("MainWindow", u"GPU:", None))
+        self.gpu_L_2.setText(QCoreApplication.translate("MainWindow", u"GPU:", None))
         self.gpu_L.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.label_41.setText(QCoreApplication.translate("MainWindow", u"Network:", None))
+        self.network_L_2.setText(QCoreApplication.translate("MainWindow", u"Network:", None))
         self.network_L.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.labelNetworkSpeed.setText(QCoreApplication.translate("MainWindow", u"Network speed", None))
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Download:", None))
+        self.networkspeed_L.setText(QCoreApplication.translate("MainWindow", u"Network speed", None))
+        self.download_L.setText(QCoreApplication.translate("MainWindow", u"Download:", None))
         self.Download_L.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.label_14.setText(QCoreApplication.translate("MainWindow", u"Upload:", None))
+        self.upload_L.setText(QCoreApplication.translate("MainWindow", u"Upload:", None))
         self.Upload_L.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.label_16.setText(QCoreApplication.translate("MainWindow", u"Ping:", None))
+        self.ping_L.setText(QCoreApplication.translate("MainWindow", u"Ping:", None))
         self.Ping_L.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.start_test_B.setText(QCoreApplication.translate("MainWindow", u"Start test", None))
-        self.menu.setTitle(QCoreApplication.translate("MainWindow", u"\u0424\u0430\u0439\u043b", None))
-        self.menu_5.setTitle(QCoreApplication.translate("MainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442", None))
-        self.menu_3.setTitle(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438", None))
+        self.file_MB.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
+        self.export_MB.setTitle(QCoreApplication.translate("MainWindow", u"Export", None))
+        self.params_MB.setTitle(QCoreApplication.translate("MainWindow", u"Settings", None))
+        self.lang_MB.setTitle(QCoreApplication.translate("MainWindow", u"Language", None))
     # retranslateUi
 

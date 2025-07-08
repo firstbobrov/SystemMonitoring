@@ -154,7 +154,7 @@ QChartView QLineSeries {
          </spacer>
         </item>
         <item>
-         <widget class="QLabel" name="label_18">
+         <widget class="QLabel" name="publicIP_L">
           <property name="text">
            <string>Public IP:</string>
           </property>
@@ -204,7 +204,7 @@ QChartView QLineSeries {
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_10">
         <item>
-         <widget class="QLabel" name="label_20">
+         <widget class="QLabel" name="localIP_L">
           <property name="text">
            <string>Local IP:</string>
           </property>
@@ -254,9 +254,9 @@ QChartView QLineSeries {
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_11">
         <item>
-         <widget class="QLabel" name="label_21">
+         <widget class="QLabel" name="mac_L">
           <property name="text">
-           <string>Мак адрес:</string>
+           <string>MAC address:</string>
           </property>
          </widget>
         </item>
@@ -355,7 +355,7 @@ QChartView QLineSeries {
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="labelSystemMonitor">
+           <widget class="QLabel" name="systemmonitor_L">
             <property name="text">
              <string>System monitor</string>
             </property>
@@ -397,7 +397,7 @@ QChartView QLineSeries {
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_31">
             <item>
-             <widget class="QLabel" name="label_37">
+             <widget class="QLabel" name="cpu_L_2">
               <property name="text">
                <string>CPU:</string>
               </property>
@@ -460,7 +460,7 @@ QChartView QLineSeries {
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_32">
             <item>
-             <widget class="QLabel" name="label_38">
+             <widget class="QLabel" name="ram_L_2">
               <property name="text">
                <string>RAM:</string>
               </property>
@@ -523,7 +523,7 @@ QChartView QLineSeries {
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_33">
             <item>
-             <widget class="QLabel" name="label_39">
+             <widget class="QLabel" name="disk_L_2">
               <property name="text">
                <string>Disk:</string>
               </property>
@@ -586,7 +586,7 @@ QChartView QLineSeries {
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_34">
             <item>
-             <widget class="QLabel" name="label_40">
+             <widget class="QLabel" name="gpu_L_2">
               <property name="text">
                <string>GPU:</string>
               </property>
@@ -649,7 +649,7 @@ QChartView QLineSeries {
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_35">
             <item>
-             <widget class="QLabel" name="label_41">
+             <widget class="QLabel" name="network_L_2">
               <property name="text">
                <string>Network:</string>
               </property>
@@ -750,7 +750,7 @@ QChartView QLineSeries {
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="labelNetworkSpeed">
+           <widget class="QLabel" name="networkspeed_L">
             <property name="text">
              <string>Network speed</string>
             </property>
@@ -792,7 +792,7 @@ QChartView QLineSeries {
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_6">
             <item>
-             <widget class="QLabel" name="label_12">
+             <widget class="QLabel" name="download_L">
               <property name="text">
                <string>Download:</string>
               </property>
@@ -855,7 +855,7 @@ QChartView QLineSeries {
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_7">
             <item>
-             <widget class="QLabel" name="label_14">
+             <widget class="QLabel" name="upload_L">
               <property name="text">
                <string>Upload:</string>
               </property>
@@ -918,7 +918,7 @@ QChartView QLineSeries {
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_8">
             <item>
-             <widget class="QLabel" name="label_16">
+             <widget class="QLabel" name="ping_L">
               <property name="text">
                <string>Ping:</string>
               </property>
@@ -1103,28 +1103,36 @@ QChartView QLineSeries {
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu">
+   <widget class="QMenu" name="file_MB">
     <property name="title">
-     <string>Файл</string>
+     <string>File</string>
     </property>
-    <widget class="QMenu" name="menu_5">
+    <widget class="QMenu" name="export_MB">
      <property name="title">
-      <string>Экспорт</string>
+      <string>Export</string>
      </property>
      <addaction name="actionWord"/>
      <addaction name="actiontxt"/>
      <addaction name="actionpdf"/>
      <addaction name="actionhtml"/>
     </widget>
-    <addaction name="menu_5"/>
+    <addaction name="export_MB"/>
    </widget>
-   <widget class="QMenu" name="menu_3">
+   <widget class="QMenu" name="params_MB">
     <property name="title">
-     <string>Настройки</string>
+     <string>Settings</string>
     </property>
+    <widget class="QMenu" name="lang_MB">
+     <property name="title">
+      <string>Language</string>
+     </property>
+     <addaction name="actionRU_2"/>
+     <addaction name="actionEN_2"/>
+    </widget>
+    <addaction name="lang_MB"/>
    </widget>
-   <addaction name="menu"/>
-   <addaction name="menu_3"/>
+   <addaction name="file_MB"/>
+   <addaction name="params_MB"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionWord">
@@ -1145,6 +1153,26 @@ QChartView QLineSeries {
   <action name="actionhtml">
    <property name="text">
     <string>html</string>
+   </property>
+  </action>
+  <action name="actionRU">
+   <property name="text">
+    <string>RU</string>
+   </property>
+  </action>
+  <action name="actionEN">
+   <property name="text">
+    <string>EN</string>
+   </property>
+  </action>
+  <action name="actionRU_2">
+   <property name="text">
+    <string>Russian</string>
+   </property>
+  </action>
+  <action name="actionEN_2">
+   <property name="text">
+    <string>English</string>
    </property>
   </action>
  </widget>
