@@ -16,7 +16,7 @@ class MainWindow(QMainWindow):
 
         # Инициализация переменных для графика
         self.time_counter = 0
-        self.max_points = 60  # Количество точек на графике (60 секунд)
+        self.max_points = 30  # Количество точек на графике (60 секунд)
 
         # Инициализация графика CPU (теперь после инициализации переменных)
         self.init_cpu_chart()
@@ -78,6 +78,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.chart_view)
         layout.setContentsMargins(0, 0, 0, 0)
 
+
     # ... остальные методы без изменений ...
     def init_static_data(self):
         """Инициализация статических данных (IP/MAC)"""
@@ -125,17 +126,18 @@ class MainWindow(QMainWindow):
         """Обновление графика загрузки CPU"""
         self.time_counter += 1
 
-        # Если превысили максимальное количество точек - очищаем
-        if self.time_counter > self.max_points:
-            self.series.clear()
-            self.time_counter = 1
-
         # Добавляем новую точку
         self.series.append(self.time_counter, cpu_usage)
 
-        # Автоматическая прокрутка графика
-        if self.time_counter > 30:
-            self.axis_x.setRange(self.time_counter - 30, min(self.time_counter + 1, self.max_points))
+        # Если точек больше, чем max_points, удаляем самую старую
+        if self.series.count() > self.max_points:
+            self.series.remove(0)
+
+        # Всегда показываем окно из max_points последних точек
+        if self.time_counter > self.max_points:
+            self.axis_x.setRange(self.time_counter - self.max_points + 1, self.time_counter)
+        else:
+            self.axis_x.setRange(1, self.max_points)
 
     def speed_test(self):
         # Отключаем кнопку, чтобы нельзя было запустить тест повторно

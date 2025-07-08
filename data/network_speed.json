@@ -1,126 +1,38 @@
 [
     {
-        "Download": "188.65 Мбит/с",
-        "Local_IP": "10.252.1.70",
-        "Mac": "1c:69:7a:7e:93:0d",
-        "Ping": "23.67 мс",
-        "Public_IP": "62.231.181.231",
-        "Upload": "116.94 Мбит/с"
-    },
-    {
-        "Download": "144.32 Мбит/с",
-        "Local_IP": "10.252.1.70",
-        "Mac": "1c:69:7a:7e:93:0d",
-        "Ping": "24.10 мс",
-        "Public_IP": "62.231.181.231",
-        "Upload": "109.41 Мбит/с"
+        "error": "HTTP Error 403: Forbidden",
+        "local_network": "Sent: 615.19 MB | Recv: 1462.89 MB"
     },
     {
         "error": "HTTP Error 403: Forbidden",
-        "local_network": "Sent: 1223.01 MB | Recv: 2993.05 MB"
+        "local_network": "Sent: 615.17 MB | Recv: 1462.64 MB"
     },
     {
         "error": "HTTP Error 403: Forbidden",
-        "local_network": "Sent: 1223.00 MB | Recv: 2993.01 MB"
+        "local_network": "Sent: 615.17 MB | Recv: 1462.63 MB"
     },
     {
-        "error": "HTTP Error 403: Forbidden",
-        "local_network": "Sent: 1222.99 MB | Recv: 2992.72 MB"
-    },
-    {
-        "error": "HTTP Error 403: Forbidden",
-        "local_network": "Sent: 1222.99 MB | Recv: 2992.67 MB"
-    },
-    {
-        "error": "HTTP Error 403: Forbidden",
-        "local_network": "Sent: 1222.99 MB | Recv: 2992.66 MB"
-    },
-    {
-        "error": "HTTP Error 403: Forbidden",
-        "local_network": "Sent: 1222.99 MB | Recv: 2992.64 MB"
-    },
-    {
-        "error": "HTTP Error 403: Forbidden",
-        "local_network": "Sent: 1222.99 MB | Recv: 2992.63 MB"
-    },
-    {
-        "Download": "170.80 Мбит/с",
+        "Download": "151.99 Мбит/с",
         "Local_IP": "10.252.1.70",
         "Mac": "1c:69:7a:7e:93:0d",
-        "Ping": "22.57 мс",
+        "Ping": "15.96 мс",
         "Public_IP": "62.231.181.231",
-        "Upload": "110.04 Мбит/с"
+        "Upload": "85.13 Мбит/с"
     },
     {
-        "Download": "181.16 Мбит/с",
+        "Download": "93.29 Мбит/с",
         "Local_IP": "10.252.1.70",
         "Mac": "1c:69:7a:7e:93:0d",
-        "Ping": "21.18 мс",
+        "Ping": "7.67 мс",
         "Public_IP": "62.231.181.231",
-        "Upload": "111.94 Мбит/с"
+        "Upload": "93.48 Мбит/с"
     },
     {
-        "Download": "178.09 Мбит/с",
+        "Download": "122.91 Мбит/с",
         "Local_IP": "10.252.1.70",
         "Mac": "1c:69:7a:7e:93:0d",
-        "Ping": "24.11 мс",
+        "Ping": "12.82 мс",
         "Public_IP": "62.231.181.231",
-        "Upload": "98.41 Мбит/с"
-    },
-    {
-        "Download": "172.84 Мбит/с",
-        "Local_IP": "10.252.1.70",
-        "Mac": "1c:69:7a:7e:93:0d",
-        "Ping": "22.25 мс",
-        "Public_IP": "62.231.181.231",
-        "Upload": "102.66 Мбит/с"
-    },
-    {
-        "error": "HTTP Error 403: Forbidden",
-        "local_network": "Sent: 567.08 MB | Recv: 1564.14 MB"
-    },
-    {
-        "error": "HTTP Error 403: Forbidden",
-        "local_network": "Sent: 567.08 MB | Recv: 1564.12 MB"
-    },
-    {
-        "Download": "141.73 Мбит/с",
-        "Local_IP": "10.252.1.70",
-        "Mac": "1c:69:7a:7e:93:0d",
-        "Ping": "34.77 мс",
-        "Public_IP": "62.231.181.231",
-        "Upload": "85.38 Мбит/с"
-    },
-    {
-        "Download": "149.87 Мбит/с",
-        "Local_IP": "10.252.1.70",
-        "Mac": "1c:69:7a:7e:93:0d",
-        "Ping": "22.51 мс",
-        "Public_IP": "62.231.181.231",
-        "Upload": "102.83 Мбит/с"
-    },
-    {
-        "Download": "130.68 Мбит/с",
-        "Local_IP": "10.252.1.70",
-        "Mac": "1c:69:7a:7e:93:0d",
-        "Ping": "29.75 мс",
-        "Public_IP": "62.231.181.231",
-        "Upload": "92.29 Мбит/с"
-    },
-    {
-        "Download": "333.10 Мбит/с",
-        "Local_IP": "192.168.0.102",
-        "Mac": "70:32:17:cb:37:f2",
-        "Ping": "10.27 мс",
-        "Public_IP": "5.44.172.92",
-        "Upload": "433.08 Мбит/с"
-    },
-    {
-        "Download": "334.52 Мбит/с",
-        "Local_IP": "192.168.0.103",
-        "Mac": "70:32:17:cb:37:f2",
-        "Ping": "15.05 мс",
-        "Public_IP": "5.44.172.92",
-        "Upload": "422.04 Мбит/с"
+        "Upload": "104.97 Мбит/с"
     }
 ]
